@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Desktop</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="dark-body">
+    <header class="app-header">
+        <h1>Remote Desktop</h1>
+        <div class="header-actions">
+            <button id="wake-display" class="ghost-button">Wake Display</button>
+            <button id="refresh-stream">Refresh Stream</button>
+            <a href="/logout" class="link-button">Logout</a>
+        </div>
+    </header>
+    <main class="dashboard">
+        <div class="screen-wrapper" style="aspect-ratio: {{ screen_width }} / {{ screen_height }};">
+            <img id="screen-stream" alt="Desktop stream" draggable="false">
+            <div
+                id="control-surface"
+                tabindex="0"
+                data-screen-width="{{ screen_width }}"
+                data-screen-height="{{ screen_height }}"
+            ></div>
+            <div id="cursor-indicator" aria-hidden="true"></div>
+        </div>
+        <div id="status-banner" class="status-banner" hidden></div>
+        <div class="hint-text">
+            Click the screen to focus. Keyboard & mouse events relay in real time.
+        </div>
+    </main>
+    <script>
+        window.AGENT_ENABLED = {{ 'true' if agent_enabled else 'false' }};
+    </script>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
