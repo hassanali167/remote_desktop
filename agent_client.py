@@ -6,6 +6,7 @@ developed independently. When REMOTE_AGENT_ENABLED is false the Flask app
 falls back to in-process capture and input handling.
 """
 
+
 from __future__ import annotations
 
 import logging
