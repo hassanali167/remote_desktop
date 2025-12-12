@@ -1,7 +1,6 @@
 """
 Lightweight HTTP client that proxies the Flask app to the privileged host agent.
 
-
 During Phase 2 the agent provides stubbed endpoints so the web gateway can be
 developed independently. When REMOTE_AGENT_ENABLED is false the Flask app
 falls back to in-process capture and input handling.
