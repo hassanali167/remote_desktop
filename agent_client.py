@@ -7,7 +7,6 @@ falls back to in-process capture and input handling.
 """
 
 
-
 from __future__ import annotations
 
 import logging
